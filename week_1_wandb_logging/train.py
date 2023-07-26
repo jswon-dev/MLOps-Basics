@@ -43,7 +43,7 @@ def main():
 
     checkpoint_callback = ModelCheckpoint(
         dirpath="./models",
-        filename="best-checkpoint.ckpt",
+        filename="best-checkpoint",
         monitor="valid/loss",
         mode="min",
     )
