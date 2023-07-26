@@ -1,3 +1,4 @@
+import glob
 import torch
 from model import ColaModel
 from data import DataModule
@@ -29,5 +30,5 @@ class ColaPredictor:
 
 if __name__ == "__main__":
     sentence = "The boy is sitting on a bench"
-    predictor = ColaPredictor("./models/best-checkpoint.ckpt")
+    predictor = ColaPredictor(glob.glob("./outputs/*/*/models/best-checkpoint.ckpt")[0])
     print(predictor.predict(sentence))
